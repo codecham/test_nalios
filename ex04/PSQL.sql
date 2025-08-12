@@ -29,4 +29,4 @@ JOIN ProductCategorie pc ON p.id = pc.product_id
 JOIN Categorie c ON pc.categorie_id = c.id
 WHERE c.flag = 'public'
 GROUP BY p.id, p.name, p.price, p.create_at
-HAVING COUNT(DISTINC c.id) >= 5;
+HAVING COUNT(DISTINC c.id) > 5;
