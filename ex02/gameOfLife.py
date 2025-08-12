@@ -28,7 +28,7 @@ def checkCell(matrix, i, j):
 def makeTurn(matrix):
 	new_matrix = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
 	for i in range(len(matrix)):
-		for j in range(len(matrix)):
+		for j in range(len(matrix[i])):
 			new_matrix[i][j] = checkCell(matrix, i, j)
 	return new_matrix
 
@@ -39,14 +39,14 @@ def gameOfLife(matrix, n_turn):
 
 if __name__ == "__main__":
 	matrix = [
-		[0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-		[1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-		[0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+		[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		]
 	n_turn = 5
 	print(gameOfLife(matrix, n_turn))
